@@ -1,11 +1,7 @@
-import React, { ReactElement } from 'react';
-import { render, RenderOptions } from '@testing-library/react';
+import React, { type ReactElement } from "react";
+import { render, type RenderOptions } from "@testing-library/react";
 
-const AllTheProviders = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       {/* wrap with All the providers */}
@@ -16,8 +12,10 @@ const AllTheProviders = ({
 
 const customRender = (
   ui: ReactElement,
-  options?: Omit<RenderOptions, 'wrapper'>
+  options?: Omit<RenderOptions, "wrapper">
 ) => render(ui, { wrapper: AllTheProviders, ...options });
 
-export * from '@testing-library/react';
+// eslint-disable-next-line
+export * from "@testing-library/react";
+// eslint-disable-next-line
 export { customRender as render };
